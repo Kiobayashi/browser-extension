@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "Lead Tracker",
+    "version": "1.0",
+    "description": "Opis rozszerzenia",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+}
