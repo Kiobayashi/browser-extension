@@ -21,7 +21,7 @@ input {
     font-weight: bold;
     margin: 5px 0px;
 }
-#delete-btn{
+.delete-btn{
     margin-left: 5px;
     background-color: white ;
     color: #5f9341;
