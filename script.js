@@ -16,9 +16,10 @@ if (leadsFromLocalStorage){
 }
 
 tabBtn.addEventListener("click", function(){
- myLeads.push(tabs[0].url)
- localStorage.setItem("myLeads", JSON.stringify(myLeads))
- render(myLeads)
+    const currentUrl = window.location.href;
+    myLeads.push(currentUrl)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    render(myLeads)
 })
 deletAallEl.addEventListener("click", function(){
     localStorage.clear()
