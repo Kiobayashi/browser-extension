@@ -4,9 +4,6 @@
     "version": "1.0",
     "description": "Opis rozszerzenia",
     "permissions": [
-        "activeTab",
-        "contextMenus",
-        "storage",
         "activeTab"
     ],
     "action": {
