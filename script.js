@@ -12,12 +12,11 @@ if (leadsFromLocalStorage){
 }
 
 tabBtn.addEventListener("click", function(){
-    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-        let url = tabs[0].url
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
     })
-    myLeads.push(url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    render(myLeads)
 })
 deletAallEl.addEventListener("click", function(){
     localStorage.clear()
