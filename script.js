@@ -2,14 +2,24 @@ const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 const deletAallEl = document.getElementById("delete-all-btn")
+const tabBtn = document.getElementById("tab-btn")
 let myLeads = []
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+const tabs = [
+    {url: "https://www.youtube.com/watch?v=jS4aFq5-91M&t=335s"}
+]
 
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
 
+tabBtn.addEventListener("click", function(){
+ myLeads.push(tabs[0].url)
+ localStorage.setItem("myLeads", JSON.stringify(myLeads))
+ render(myLeads)
+})
 deletAallEl.addEventListener("click", function(){
     localStorage.clear()
     myLeads = []
@@ -21,7 +31,6 @@ inputBtn.addEventListener("click", function(){
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myLeads)
-    console.log(localStorage.getItem("myLeads"))
 })
 
 function render(leads) {

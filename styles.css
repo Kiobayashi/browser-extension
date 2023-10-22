@@ -28,6 +28,14 @@ input {
     border: 1px solid #5f9341;
     font-weight: bold;
 }
+#tab-btn{
+    background-color: #5f9341 ;
+    color: white;
+    border: 1px solid #5f9341;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 5px 0px;
+}
 #delete-all-btn{
     background-color: white ;
     color: #5f9341;
