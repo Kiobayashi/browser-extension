@@ -6,18 +6,16 @@ const tabBtn = document.getElementById("tab-btn")
 let myLeads = []
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
-const tabs = [
-    {url: "https://www.youtube.com/watch?v=jS4aFq5-91M&t=335s"}
-]
-
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
 
 tabBtn.addEventListener("click", function(){
-    const currentUrl = window.location.href;
-    myLeads.push(currentUrl)
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+        let url = tabs[0].url
+    })
+    myLeads.push(url)
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myLeads)
 })
